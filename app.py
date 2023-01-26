@@ -8,7 +8,7 @@ if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 #title&header
 st.title("Animals' Classification Model")
-st.header('This model classifies the animals name after uploading their pictures to the app.')
+st.header('This model classifies the animals type after uploading their pictures to the app.')
 st.write("The supporting animal types are Zebra, Horse, Mule, Deer, Camel, Bull")
 
 #Upload picture
