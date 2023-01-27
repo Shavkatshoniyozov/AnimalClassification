@@ -1,6 +1,7 @@
 import streamlit as st
 from fastai.vision.all import *
 import plotly.express as px
+from PIL import Image
 import pathlib
 
 plt = platform.system()
@@ -13,8 +14,10 @@ st.write("The supporting animal types are Zebra, Horse, Mule, Deer, Camel, Bull"
 
 #Upload picture
 file = st.file_uploader("Upload picture", type=['png', 'jpeg', 'gif', 'svg', 'jpg'])
-if file:
-    st.image(file)
+if file is not None:
+    image = Image.open(file)
+    new_image = image.resize((600, 500))
+    st.image(new_image)
 
     #PIL convert image
     img =PILImage.create(file)
